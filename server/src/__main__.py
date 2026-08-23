@@ -1,8 +1,10 @@
-from .controllers import app, init
+from .app import App
+from .controllers import init as init_controllers
 
 def main() -> None:
-    init()
-    app.run(debug=True, port=4000)
+    app = App()
+    init_controllers(app)
+    app.run(4000)
 
 
 if __name__ == "__main__":
