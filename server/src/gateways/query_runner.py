@@ -5,7 +5,7 @@ class QueryRunner:
     def __init__(self, table: str, pk: str):
         self.table = table
         self.pk = pk
-        self.connection_string = "host='localhost' dbname='postgres' user='postgres' password='itca' port=5432"
+        self.connection_string = "host='localhost' dbname='itca' user='postgres' password='itca' port=5432"
     
     def list_all(self, columns: List[str]):
         with connect(self.connection_string) as connection:
