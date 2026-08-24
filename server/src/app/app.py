@@ -27,7 +27,7 @@ class App:
         route = self._prefix_url(url)
         return self.app.route(route, methods=["DELETE"])
 
-    def get_request_body():
+    def get_request_body(self):
         return request.get_json()
 
     def _prefix_url(self, url: str):
