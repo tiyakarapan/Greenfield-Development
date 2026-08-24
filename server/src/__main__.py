@@ -1,5 +1,5 @@
 from .app import App
-from .controllers import init as init_controllers
+from .controllers import init_controllers
 
 def main() -> None:
     app = App()

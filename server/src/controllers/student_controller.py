@@ -1,7 +1,7 @@
 from ..app import App
 from ..usecases.student import get_all_students, create_student, update_student, delete_student
 
-def init(app: App):
+def init_student_controller(app: App):
     @app.get("student/")
     def get_all_students_endpoint():
         return get_all_students()

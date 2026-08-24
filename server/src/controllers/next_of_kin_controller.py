@@ -1,7 +1,7 @@
 from ..app import App
 from ..usecases.next_of_kin import get_all_next_of_kin, create_next_of_kin, update_next_of_kin, delete_next_of_kin
 
-def init(app: App):
+def init_next_of_kin_controller(app: App):
     @app.get("next_of_kin/")
     def get_all_next_of_kin_endpoint():
         return get_all_next_of_kin()
