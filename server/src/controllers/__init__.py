@@ -6,4 +6,4 @@ from .sponsor_controller import init_sponsor_controller
 def init_controllers(app: App):
     init_student_controller(app)
     init_next_of_kin_controller(app)
-    init_sponsor_controller
+    init_sponsor_controller(app)
