@@ -1,12 +1,14 @@
 from flask import Flask, request
 from flask_cors import CORS
 from .json_provider import apply_custom_json_provider
+from .error_handler import apply_error_handler
 
 class App:
     def __init__(self):
         self.app = Flask(__name__)
         CORS(self.app)
         apply_custom_json_provider(self.app)
+        apply_error_handler(self.app)
 
     def run(self, port: int):
         self.app.run(debug=True, port=port)
