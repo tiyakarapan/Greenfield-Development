@@ -1,4 +1,4 @@
-from ...gateways import StudentGateway
+from ...gateways.student_gateway import StudentGateway
 
 def get_all_students():
     student_gateway = StudentGateway()
