@@ -7,6 +7,7 @@ from. facilitator_controller import init_facilitator_controller
 from .facilitator_qualification_controller import init_facilitator_qualification_controller
 from .enrollment_controller import init_enrollment_controller
 from .attendance_controller import init_attendance_controller
+from .course_controller import init_course_controller
 
 def init_controllers(app: App):
     init_student_controller(app)
@@ -17,3 +18,4 @@ def init_controllers(app: App):
     init_facilitator_qualification_controller(app)
     init_enrollment_controller(app)
     init_attendance_controller(app)
+    init_course_controller(app)
