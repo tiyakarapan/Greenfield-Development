@@ -1,5 +1,5 @@
 from ..app import App
-from ..usecases.facilitator import get_all_facilitator, create_facilitator, update_facilitator, delete_facilitator
+from ..usecases.facilitator import get_all_facilitators, create_facilitator, update_facilitator, delete_facilitator
 
 def init_facilitator_controller(app: App):
     @app.get("facilitator/")
