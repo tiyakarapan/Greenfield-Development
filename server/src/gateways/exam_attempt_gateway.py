@@ -5,15 +5,7 @@ class ExamAttemptGateway():
         self.query_runner = QueryRunner("exam_attempt", "attempt_id")
 
     def list_all(self):
-        return self.query_runner.list_all([
-            "attempt_id",
-            "enrollment_id",
-            "attempt_number",
-            "exam_date",
-            "score",
-            "pass_fail",
-            "access_key"
-        ])
+        return self.query_runner.list_all()
 
     def create(self, values):
         return self.query_runner.insert(values)
