@@ -5,13 +5,7 @@ class CourseGateway():
         self.query_runner = QueryRunner("course", "course_id")
 
     def list_all(self):
-        return self.query_runner.list_all([
-            "course_id",
-            "course_name",
-            "duration_weeks",
-            "cert_body_id",
-            "prerequisite_course_id"
-        ])
+        return self.query_runner.list_all()
 
     def create(self, values):
         return self.query_runner.insert(values)

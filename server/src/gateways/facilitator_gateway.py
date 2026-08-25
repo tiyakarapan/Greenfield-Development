@@ -5,13 +5,7 @@ class FacilitatorGateway():
         self.query_runner = QueryRunner("facilitator", "facilitator_id")
 
     def list_all(self):
-        return self.query_runner.list_all([
-            "facilitator_id",
-            "first_name",
-            "last_name",
-            "email",
-            "phone_number",
-        ])
+        return self.query_runner.list_all()
 
     def create(self, values):
         return self.query_runner.insert(values)

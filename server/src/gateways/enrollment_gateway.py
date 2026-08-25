@@ -5,16 +5,7 @@ class EnrollmentGateway():
         self.query_runner = QueryRunner("enrollment", "enrollment_id")
 
     def list_all(self):
-        return self.query_runner.list_all([
-            "enrollment_id",
-            "student_id",
-            "course_id",
-            "facilitator_id",
-            "sponsor_id",
-            "enrollment_date",
-            "enrollment_status",
-            "final_result"
-        ])
+        return self.query_runner.list_all()
 
     def create(self, values):
         return self.query_runner.insert(values)

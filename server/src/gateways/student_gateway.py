@@ -5,20 +5,7 @@ class StudentGateway():
         self.query_runner = QueryRunner("student", "student_id")
 
     def list_all(self):
-        return self.query_runner.list_all([
-            "student_id",
-            "first_name",
-            "last_name",
-            "national_id_number",
-            "email",
-            "address",
-            "date_of_birth",
-            "enrollment_date",
-            "status",
-            "medical_needs",
-            "medical_aid_provider",
-            "medical_aid_number"
-        ])
+        return self.query_runner.list_all()
 
     def create(self, values):
         return self.query_runner.insert(values)

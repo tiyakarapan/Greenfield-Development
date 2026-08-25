@@ -8,7 +8,7 @@ class QueryRunner:
         self.pk = pk if isinstance(pk, list) else [pk]
         self.connection_string = "host='localhost' dbname='itca' user='postgres' password='itca' port=5432"
     
-    def list_all(self, columns: List[str]):
+    def list_all(self):
         with self._connect() as connection:
             with connection.cursor() as cursor:
                 cursor.execute(f"SELECT * FROM {self.table}")

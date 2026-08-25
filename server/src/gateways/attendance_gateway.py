@@ -5,13 +5,7 @@ class AttendanceGateway():
         self.query_runner = QueryRunner("attendance", "attendance_id")
 
     def list_all(self):
-        return self.query_runner.list_all([
-            "attendance_id",
-            "enrollment_id",
-            "attendance_date",
-            "status",
-            "notes"
-        ])
+        return self.query_runner.list_all()
 
     def create(self, values):
         return self.query_runner.insert(values)

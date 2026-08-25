@@ -5,15 +5,7 @@ class NextOfKinGateway():
         self.query_runner = QueryRunner("next_of_kin", "next_of_kin_id")
 
     def list_all(self):
-        return self.query_runner.list_all([
-            "next_of_kin_id",
-            "student_id",
-            "full_name",
-            "national_id_number",
-            "address",
-            "phone_number",
-            "relationship",
-        ])
+        return self.query_runner.list_all()
 
     def create(self, values):
         return self.query_runner.insert(values)

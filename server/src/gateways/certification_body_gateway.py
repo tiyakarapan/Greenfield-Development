@@ -5,10 +5,7 @@ class CertificationBodyGateway():
         self.query_runner = QueryRunner("certification_body", "cert_body_id")
 
     def list_all(self):
-        return self.query_runner.list_all([
-            "cert_body_id",
-            "body_name"
-        ])
+        return self.query_runner.list_all()
 
     def create(self, values):
         return self.query_runner.insert(values)
