@@ -2,14 +2,10 @@ from .query_runner import QueryRunner
 
 class FacilitatorQualificationGateway():
     def __init__(self):
-        self.query_runner = QueryRunner("qualification", "course_id")
+        self.query_runner = QueryRunner("facilitator_qualification", ["course_id", "facilitator_id"])
 
     def list_all(self):
-        return self.query_runner.list_all([
-            "facilitator_id",
-            "course_id",
-            "qualified_date",
-        ])
+        return self.query_runner.list_all()
 
     def create(self, values):
         return self.query_runner.insert(values)

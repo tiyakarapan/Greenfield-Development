@@ -11,11 +11,13 @@ def init_facilitator_qualification_controller(app: App):
         values = app.get_request_body()
         return create_facilitator_qualification(values)
 
-    @app.put("facilitator_qualification/<int:id>")
+    @app.put("facilitator_qualification/<string:id>")
     def update_facilitator_qualification_endpoint(id):
+        ids = id.split("_")
         values = app.get_request_body()
-        return update_facilitator_qualification(id, values)
+        return update_facilitator_qualification(ids, values)
 
-    @app.delete("facilitator_qualification/<int:id>")
+    @app.delete("facilitator_qualification/<string:id>")
     def delete_facilitator_qualification_endpoint(id):
-        return delete_facilitator_qualification(id)
+        ids = id.split("_")
+        return delete_facilitator_qualification(ids)
