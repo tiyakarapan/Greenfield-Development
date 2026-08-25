@@ -9,13 +9,13 @@ class QueryRunner:
         self.connection_string = "host='localhost' dbname='itca' user='postgres' password='itca' port=5432"
     
     def list_all(self, columns: List[str]):
-        with connect(self.connection_string, row_factory=dict_row) as connection:
+        with self._connect() as connection:
             with connection.cursor() as cursor:
                 cursor.execute(f"SELECT * FROM {self.table}")
                 return cursor.fetchall()
 
     def insert(self, values: Dict[str, Any]):
-        with connect(self.connection_string, row_factory=dict_row) as connection:
+        with self._connect() as connection:
             with connection.cursor() as cursor:
                 columns = list(values.keys())
                 
@@ -27,7 +27,7 @@ class QueryRunner:
                 return cursor.fetchone()
 
     def update(self, id: Any | List[Any], values: Dict[str, Any]):
-        with connect(self.connection_string, row_factory=dict_row) as connection:
+        with self._connect() as connection:
             with connection.cursor() as cursor:
                 columns = list(values.keys())
 
@@ -42,7 +42,7 @@ class QueryRunner:
                 return cursor.fetchone()
 
     def delete(self, id: Any):
-        with connect(self.connection_string, row_factory=dict_row) as connection:
+        with self._connect() as connection:
             with connection.cursor() as cursor:
                 id_values = id if isinstance(id, list) else [id]
                 cursor.execute(f"""
@@ -50,8 +50,5 @@ class QueryRunner:
                     WHERE {" AND ".join(f"{pk} = %s" for pk in self.pk)}
                 """, tuple(id_values))
 
-    def execute_raw(self, query: str, params: List[Any]):
-        with connect(self.connection_string, row_factory=dict_row) as connection:
-            with connection.cursor() as cursor:
-                cursor.execute(query, tuple(params))
-                return cursor.fetchall()
+    def _connect(self):
+        return connect(self.connection_string, row_factory=dict_row)
