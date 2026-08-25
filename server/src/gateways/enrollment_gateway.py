@@ -9,7 +9,7 @@ class EnrollmentGateway():
             "enrollment_id",
             "student_id",
             "course_id",
-            "facilitator",
+            "facilitator_id",
             "sponsor_id",
             "enrollment_date",
             "enrollment_status",
