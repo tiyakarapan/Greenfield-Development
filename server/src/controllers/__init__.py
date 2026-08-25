@@ -5,6 +5,7 @@ from .sponsor_controller import init_sponsor_controller
 from .certification_body import init_certification_body_controller
 from. facilitator_controller import init_facilitator_controller
 from .facilitator_qualification_controller import init_facilitator_qualification_controller
+from .enrollment_controller import init_enrollment_controller
 
 def init_controllers(app: App):
     init_student_controller(app)
@@ -13,3 +14,4 @@ def init_controllers(app: App):
     init_certification_body_controller(app)
     init_facilitator_controller(app)
     init_facilitator_qualification_controller(app)
+    init_enrollment_controller(app)
