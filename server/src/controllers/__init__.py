@@ -9,6 +9,7 @@ from .enrollment_controller import init_enrollment_controller
 from .attendance_controller import init_attendance_controller
 from .course_controller import init_course_controller
 from .exam_attempt_controller import init_exam_attempt_controller
+from .reports_controller import init_reports_controller
 
 def init_controllers(app: App):
     init_student_controller(app)
@@ -21,3 +22,4 @@ def init_controllers(app: App):
     init_attendance_controller(app)
     init_course_controller(app)
     init_exam_attempt_controller(app)
+    init_reports_controller(app)
