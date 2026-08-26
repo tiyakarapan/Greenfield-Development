@@ -32,6 +32,9 @@ class App:
     def get_request_body(self):
         return request.get_json()
 
+    def get_request_query_params(self):
+        return request.args.to_dict()
+
     def _prefix_url(self, url: str):
         if not url.startswith("/"):
             url = "/" + url
