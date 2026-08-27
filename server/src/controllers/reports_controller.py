@@ -3,6 +3,7 @@ from ..usecases.reports.get_exam_records import get_exam_records
 from ..usecases.reports.get_roster import get_roster
 from ..usecases.reports.get_transcript import get_transcript
 from ..usecases.reports.get_students_export import get_students_export
+from ..usecases.reports.get_at_risk_students import get_at_risk_students
 
 def init_reports_controller(app: App):
     @app.get("reports/exam-records")
@@ -20,3 +21,7 @@ def init_reports_controller(app: App):
     @app.get("reports/export/students")
     def get_students_export_endpoint():
         return get_students_export()
+
+    @app.get("reports/at-risk-students")
+    def get_at_risk_students_endpoint():
+        return get_at_risk_students()
