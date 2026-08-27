@@ -4,6 +4,8 @@ from ..usecases.reports.get_roster import get_roster
 from ..usecases.reports.get_transcript import get_transcript
 from ..usecases.reports.get_students_export import get_students_export
 from ..usecases.reports.get_at_risk_students import get_at_risk_students
+from ..usecases.reports.get_course_demand import get_course_demand
+from ..usecases.reports.get_facilitator_mismatches import get_facilitator_mismatches
 
 def init_reports_controller(app: App):
     @app.get("reports/exam-records")
@@ -25,3 +27,11 @@ def init_reports_controller(app: App):
     @app.get("reports/at-risk-students")
     def get_at_risk_students_endpoint():
         return get_at_risk_students()
+
+    @app.get("reports/course-demand")
+    def get_course_demand_endpoint():
+        return get_course_demand()
+
+    @app.get("reports/facilitator-mismatches")
+    def get_facilitator_mismatches_endpoint():
+        return get_facilitator_mismatches()
