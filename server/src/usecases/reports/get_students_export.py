@@ -20,7 +20,7 @@ def get_students_export():
             "student_id" : student["student_id"],
             "first_name" : student["first_name"],
             "last_name" : student["last_name"],
-            "national_id" : student["national_id"],
+            "national_id_number" : student["national_id_number"],
             "address" : student["address"],
             "date_of_birth" : student["date_of_birth"],
             "medical_needs" : student["medical_needs"],
