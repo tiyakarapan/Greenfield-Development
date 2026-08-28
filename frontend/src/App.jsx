@@ -28,18 +28,20 @@ export default function App() {
   return (
     <div className="shell">
       <Sidebar counts={counts} />
-      <main className="main">
-        <Routes>
-          <Route path="/" element={<Dashboard counts={counts} />} />
-          {Object.keys(entities).map((key) => (
-            <Route
-              key={key}
-              path={`/${key}`}
-              element={<EntityPage entityKey={key} onDataChanged={refreshCounts} />}
-            />
-          ))}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+      <main className="main-outer">
+        <div className="main-inner">
+          <Routes>
+            <Route path="/" element={<Dashboard counts={counts} />} />
+            {Object.keys(entities).map((key) => (
+              <Route
+                key={key}
+                path={`/${key}`}
+                element={<EntityPage entityKey={key} onDataChanged={refreshCounts} />}
+              />
+            ))}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </div>
       </main>
     </div>
   );
