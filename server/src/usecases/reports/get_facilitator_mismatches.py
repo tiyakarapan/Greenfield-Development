@@ -17,7 +17,7 @@ def get_facilitator_mismatches():
     result = []
 
     for enrollment in enrollments:
-        facilitator = next((f for f in facilitators if f["facilitator_id"] == enrollment["facilitator"]), None)
+        facilitator = next((f for f in facilitators if f["facilitator_id"] == enrollment["facilitator_id"]), None)
         course = next((c for c in courses if c["course_id"] == enrollment["course_id"]), None)
 
         if facilitator is None or course is None:

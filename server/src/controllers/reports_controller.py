@@ -41,6 +41,6 @@ def init_reports_controller(app: App):
     def get_intake_records_endpoint(): 
         params = app.get_request_query_params()
 
-        from_date = params.get("from_date") 
-        to_date = params.get("to_date") 
+        from_date = params.get("from")
+        to_date = params.get("to") 
         return get_intake_records(from_date, to_date)

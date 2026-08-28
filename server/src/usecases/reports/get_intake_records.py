@@ -10,10 +10,11 @@ def get_intake_records(from_date_str: str, to_date_str: str):
     students = student_gateway.list_all()
     enrollments = enrollment_gateway.list_all()
 
+
     # Convert the query strings into Python date objects
     try:
-        from_date = date.fromisoformat(from_date_str)
-        to_date = date.fromisoformat(to_date_str)
+        from_date = date.fromisoformat(from_date_str) if from_date_str is not None else date(1950, 1, 1)
+        to_date = date.fromisoformat(to_date_str) if to_date_str is not None else date(2050, 12, 31)
     except ValueError as e:
         raise ValueError(
             f"Invalid date format, expected ISO format (YYYY-MM-DD): {e}"
